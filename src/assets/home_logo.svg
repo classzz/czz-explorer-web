@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="1920px" height="417px" viewBox="0 0 1920 417" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 54.1 (76490) - https://sketchapp.com -->
+    <title>不可能三角图-灰色复制</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <linearGradient x1="47.2597382%" y1="-23.1568367%" x2="47.2597382%" y2="164.170279%" id="linearGradient-1">
+            <stop stop-color="#F76B1C" offset="0%"></stop>
+            <stop stop-color="#EFC42A" offset="100%"></stop>
+        </linearGradient>
+        <rect id="path-2" x="0" y="0" width="1920" height="418"></rect>
+        <linearGradient x1="0%" y1="50%" x2="100%" y2="50%" id="linearGradient-4">
+            <stop stop-color="#FFFCEF" offset="0%"></stop>
+            <stop stop-color="#FFBF76" offset="100%"></stop>
+        </linearGradient>
+        <linearGradient x1="-37.3246977%" y1="32.2747402%" x2="118.744644%" y2="32.2747402%" id="linearGradient-5">
+            <stop stop-color="#FFFFFF" stop-opacity="0.16" offset="0%"></stop>
+            <stop stop-color="#FFFFFF" stop-opacity="0.08" offset="100%"></stop>
+        </linearGradient>
+        <linearGradient x1="0%" y1="50%" x2="100%" y2="50%" id="linearGradient-6">
+            <stop stop-color="#FFFCEF" stop-opacity="0.128332605" offset="0%"></stop>
+            <stop stop-color="#FFFFFF" offset="100%"></stop>
+        </linearGradient>
+        <linearGradient x1="0%" y1="50%" x2="100%" y2="50%" id="linearGradient-7">
+            <stop stop-color="#FFFFFF" stop-opacity="0.268493226" offset="0%"></stop>
+            <stop stop-color="#FFFFFF" offset="100%"></stop>
+        </linearGradient>
+        <linearGradient x1="-37.3246977%" y1="32.2747402%" x2="118.744644%" y2="32.2747402%" id="linearGradient-8">
+            <stop stop-color="#FFFFFF" stop-opacity="0.5" offset="0%"></stop>
+            <stop stop-color="#FFFFFF" stop-opacity="0.08" offset="100%"></stop>
+        </linearGradient>
+    </defs>
+    <g id="页面1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="代币分配复制-11">
+            <g id="不可能三角图-灰色复制" transform="translate(0.000000, -1.000000)">
+                <mask id="mask-3" fill="white">
+                    <use xlink:href="#path-2"></use>
+                </mask>
+                <use id="蒙版" fill="url(#linearGradient-1)" xlink:href="#path-2"></use>
+                <g id="编组-24" mask="url(#mask-3)">
+                    <g transform="translate(1396.000000, -113.000000)" id="椭圆形">
+                        <circle stroke="none" fill="url(#linearGradient-4)" fill-rule="evenodd" opacity="0.314964658" cx="430" cy="430" r="150.957447"></circle>
+                        <circle stroke="none" fill="url(#linearGradient-4)" fill-rule="evenodd" opacity="0.314964658" cx="430" cy="430" r="45.7446809"></circle>
+                        <circle stroke="url(#linearGradient-5)" stroke-width="3.65957447" fill="none" cx="430" cy="430" r="236.042553"></circle>
+                        <circle stroke="url(#linearGradient-5)" stroke-width="3.65957447" fill="none" cx="430" cy="430" r="301.914894"></circle>
+                        <circle stroke="url(#linearGradient-5)" stroke-width="3.65957447" fill="none" cx="430" cy="430" r="366.87234"></circle>
+                        <circle stroke="url(#linearGradient-5)" stroke-width="3.65957447" fill="none" cx="430" cy="430" r="430"></circle>
+                    </g>
+                </g>
+                <g id="编组-24复制" opacity="0.600309" mask="url(#mask-3)">
+                    <g transform="translate(-124.000000, -90.000000)" id="椭圆形">
+                        <circle stroke="none" fill="url(#linearGradient-6)" fill-rule="evenodd" opacity="0.314964658" cx="230" cy="230" r="80.7446809"></circle>
+                        <circle stroke="none" fill="url(#linearGradient-7)" fill-rule="evenodd" opacity="0.314964658" cx="230" cy="230" r="24.4680851"></circle>
+                        <circle stroke="url(#linearGradient-8)" stroke-width="1.95744681" fill="none" cx="230" cy="230" r="126.255319"></circle>
+                        <circle stroke="url(#linearGradient-8)" stroke-width="1.95744681" fill="none" cx="230" cy="230" r="161.489362"></circle>
+                        <circle stroke="url(#linearGradient-8)" stroke-width="1.95744681" fill="none" cx="230" cy="230" r="196.234043"></circle>
+                        <circle stroke="url(#linearGradient-8)" stroke-width="1.95744681" fill="none" cx="230" cy="230" r="230"></circle>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
