@@ -40,7 +40,7 @@
         :isOmit="false"
       />
       <div class="mt2"></div>
-      <titles :headerTitles="'Transaction Information'" />
+      <!-- <titles :headerTitles="'Transaction Information'" /> -->
       <transactionInfo :hash="hashId" ref="hashRef"/>
     </div>
     <Footer />
