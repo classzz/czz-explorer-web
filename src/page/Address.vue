@@ -3,7 +3,7 @@
     <Header :heights="'180px'" />
     <div class="pcContent pc-card mt2">
       <addressTem :msgObj="addressInfo" />
-      <transactionInfo :walletInfo="address" ref="pcaddressRef" />
+      <transactionInfo :transactionsList="detailInfo" :walletInfo="address" ref="pcaddressRef" />
     </div>
     <div class="web-block">
       <div class="mt2"></div>
@@ -41,8 +41,7 @@
         :isOmit="false"
       />
       <div class="mt2"></div>
-      <titles :headerTitles="'Transaction Information'" />
-      <transactionInfo :walletInfo="address" ref="addressRef" />
+      <transactionInfo :walletInfo="address" :transactionsList="detailInfo" ref="addressRef" />
     </div>
     <Footer />
   </div>
@@ -56,7 +55,7 @@ import transactionInfo from "./../components/transactionInfo";
 import czzCell from "./../components/czzCell";
 import titles from "./../components/titles";
 import webSecTitle from "./../components/webSecTtitle";
-import { transactions, search, acsearch } from "./../api/api";
+import { transactions, search, acsearch,wallet } from "./../api/api";
 export default {
   watch: {
     $route(to, from) {
@@ -83,6 +82,7 @@ export default {
     return {
       addressInfo: {},
       address: "",
+      detailInfo: []
     };
   },
   methods: {
@@ -92,13 +92,39 @@ export default {
         res.address = this.address;
         this.addressInfo = res;
         this.addressInfo.address = this.address;
-        this.$refs.addressRef.wallet();
-        this.$refs.pcaddressRef.wallet();
+        // this.$refs.addressRef.wallet();
+        // this.$refs.pcaddressRef.wallet();
       } catch (err) {
         this.addressInfo = {
           address: this.address,
         };
       }
+    },
+    async wallet() {
+      this.loading = true
+      let {items:res} = await wallet({address: this.address})
+      res.forEach((item,i) => {
+        item.time = this.$format(item.createdTime);
+        item.in = [];
+        item.vin.forEach((itm,k) => {
+          if (itm.value) {
+            item.in.push({
+              val: itm.address,
+              no: `-${itm.value}`,
+            });
+          }
+        });
+        item.out = [];
+        item.vout.forEach((it, j) => {
+          if (it.value) {
+            item.out.push({
+              no: `+${it.value}`,
+              val: `${it.scriptPubKey.addresses[0]}`,
+            });
+          }
+        });
+      });
+      this.detailInfo = res
     },
   },
   mounted() {
@@ -107,6 +133,7 @@ export default {
       address: this.address,
     };
     this.search();
+    this.wallet()
   },
 };
 </script>

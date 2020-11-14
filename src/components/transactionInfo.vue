@@ -74,7 +74,7 @@ import titles from "./titles";
 import webSecTitle from "./webSecTtitle";
 import { transactions,wallet } from "./../api/api";
 export default {
-  props: ["height","hash","walletInfo"],
+  props: ["height","hash","walletInfo","transactionsList"],
   components: {
     pcSecTitle,
     titles,
@@ -82,7 +82,7 @@ export default {
   },
   data() {
     return {
-      transactionsList: [],
+      // transactionsList: [],
       loading: false
     };
   },

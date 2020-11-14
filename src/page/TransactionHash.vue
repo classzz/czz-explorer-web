@@ -3,7 +3,7 @@
     <Header :heights="'180px'" />
     <div class="pcContent pc-card mt2">
       <transactionHash :msgInfo="transInfo"/>
-      <transactionInfo :hash="hashId" ref="pchashRef"/>
+      <transactionInfo :transactionsList="detailInfo" :hash="hashId" ref="pchashRef"/>
     </div>
     <div class="web-block">
       <div class="mt2"></div>
@@ -41,7 +41,7 @@
       />
       <div class="mt2"></div>
       <!-- <titles :headerTitles="'Transaction Information'" /> -->
-      <transactionInfo :hash="hashId" ref="hashRef"/>
+      <transactionInfo :transactionsList="detailInfo" :hash="hashId" ref="hashRef"/>
     </div>
     <Footer />
   </div>
@@ -70,7 +70,8 @@ export default {
     return {
       hashId: '',
       latesIndex: 0,
-      transInfo: {}
+      transInfo: {},
+      detailInfo: []
     }
   },
   methods: {
@@ -89,8 +90,34 @@ export default {
       itemInfo.time = this.$format(itemInfo.createdTime);
       itemInfo.state = this.latesIndex - itemInfo.blockHeight
       this.transInfo = itemInfo;
-      this.$refs.pchashRef.getTransaction()
-      this.$refs.hashRef.getTransaction()
+      this.getList(items)
+      // this.$refs.pchashRef.getTransaction()
+      // this.$refs.hashRef.getTransaction()
+    },
+
+    getList(arr) {
+      arr.forEach((item,i) => {
+        item.time = this.$format(item.createdTime);
+        item.in = [];
+        item.vin.forEach((itm,k) => {
+          if (itm.value) {
+            item.in.push({
+              val: itm.address,
+              no: `-${itm.value}`,
+            });
+          }
+        });
+        item.out = [];
+        item.vout.forEach((it, j) => {
+          if (it.value) {
+            item.out.push({
+              no: `+${it.value}`,
+              val: `${it.scriptPubKey.addresses[0]}`,
+            });
+          }
+        });
+      });
+      this.detailInfo = arr;
     },
   },
   mounted() {

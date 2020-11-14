@@ -8,7 +8,7 @@
         @toPreviouseBlock="toPreviouseBlock"
         @toAddress="toAddress"
       />
-      <transactionInfo :height="heightId" ref="tranRef"/>
+      <transactionInfo :height="heightId" :transactionsList="detailInfo" ref="tranRef"/>
     </div>
     <div class="web-block">
       <div class="mt2"></div>
@@ -97,7 +97,7 @@
       </template>
       <div class="mt2"></div>
       
-      <transactionInfo :height="heightId" ref="transRef"/>
+      <transactionInfo :height="heightId" :transactionsList="detailInfo" ref="transRef"/>
     </div>
     <Footer />
   </div>
@@ -130,11 +130,33 @@ export default {
       searchInfo: {},
       params: {},
       latesIndex: 0,
+      width: 960
     };
   },
   methods: {
     async transactions() {
       let { items } = await transactions({ blockHeight: this.heightId });
+      items.forEach((item,i) => {
+        item.time = this.$format(item.createdTime);
+        item.in = [];
+        item.vin.forEach((itm,k) => {
+          if (itm.value) {
+            item.in.push({
+              val: itm.address,
+              no: `-${itm.value}`,
+            });
+          }
+        });
+        item.out = [];
+        item.vout.forEach((it, j) => {
+          if (it.value) {
+            item.out.push({
+              no: `+${it.value}`,
+              val: `${it.scriptPubKey.addresses[0]}`,
+            });
+          }
+        });
+      });
       this.detailInfo = items;
       // status 展示的数据
     },
@@ -162,8 +184,8 @@ export default {
       this.searchInfo = Object.assign(this.searchInfo, {
         state: this.latesIndex - this.heightId,
       });
-      this.$refs.transRef.getTransaction()
-      this.$refs.tranRef.getTransaction()
+      // this.$refs.transRef.getTransaction()
+      // this.$refs.tranRef.getTransaction()
     },
     async latestHeight() {
       let res = await latestHeight();
@@ -180,6 +202,8 @@ export default {
     }
     this.params = { height: this.heightId };
     this.latestHeight();
+    // this.width = document.body.clientWidth
+    // console.log(width);
   },
 };
 </script>

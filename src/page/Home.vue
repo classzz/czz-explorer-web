@@ -56,11 +56,11 @@ export default {
       let res = await latestHeight();
       if (!this.headersInfo.height || res.height != this.headersInfo.height) {
         this.difficulty();
+        this.blocks();
+        this.transactions()
       }
       this.clearHomeTime = setTimeout(() => {
         this.latestHeight();
-        this.blocks();
-        this.transactions()
       }, 5000);
     },
 
