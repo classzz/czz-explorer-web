@@ -93,7 +93,7 @@ export default {
       if(this.hash) {
         post = {transHash: this.hash}
       } 
-      if(this.blockHeight) {
+      if(this.height) {
         post = {
         limit: 8,
         blockHeight: this.height,
