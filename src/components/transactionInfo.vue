@@ -6,7 +6,7 @@
         :czzName="'Transaction Information'"
       />
       <div class="czz-fee-table">
-        <ul class="table-header" v-for="(item,i) in transactionsList"
+        <ul class="table-header bb" v-for="(item,i) in transactionsList"
         :key="i">
           <li>
             <div>ID {{ item.txid }}</div>

@@ -3,6 +3,7 @@
 // see http://vuejs-templates.github.io/webpack for documentation.
 
 const path = require('path')
+const htmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
   dev: {
@@ -41,7 +42,8 @@ module.exports = {
     // https://vue-loader.vuejs.org/en/options.html#cachebusting
     cacheBusting: true,
 
-    cssSourceMap: true
+    cssSourceMap: true,
+    
   },
 
   build: {

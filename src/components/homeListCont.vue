@@ -22,9 +22,15 @@
       <div class="table-cont">
         <template v-if="tableIndex == 1">
           <blockTable :block-table="homeBlockTable" />
+          <div class="get-more">
+            <el-button type="text" @click="toLatestBlock">more>></el-button>
+          </div>
         </template>
         <template v-if="tableIndex == 2">
           <transcationTable :transaction-table="transactionTable" />
+          <div class="get-more">
+            <el-button type="text" @click="toLatestTransaction">more>></el-button>
+          </div>
         </template>
       </div>
     </div>
@@ -122,6 +128,12 @@ export default {
   height: 24px;
   margin-right: 10px;
   display: initial;
+}
+.get-more{
+display:flex; 
+align-items: flex-end; 
+justify-content: flex-end; 
+margin-top:10px
 }
 @media screen and (max-width: 960px) {
   .pc-content-cart {
