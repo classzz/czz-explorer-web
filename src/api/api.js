@@ -4,7 +4,7 @@ import ajax from './ajax.js'
 export const difficulty = params => ajax.get('/v1/block/difficulty', params)
 
 // 检测是否需要更新数据 http://explorerapi.czze.io/v1/block/latestHeight
-export const latestHeight = params => ajax.get('/v1/block/latestHeight', params)
+export const latestHeight = params => ajax.get('/v1/block/latest', params)
 
 // 获取latest block 数据
 export const blocks = params => ajax.get('/v1/blocks', params)

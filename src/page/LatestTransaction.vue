@@ -120,7 +120,7 @@ export default {
 
     async latestHeight() {
       let res = await latestHeight();
-      if (!this.headersInfo.height || res != this.headersInfo.height) {
+      if (!this.headersInfo.height || res.height != this.headersInfo.height) {
         this.pagination.page = 1
         this.transactions();
       }

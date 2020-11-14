@@ -54,11 +54,13 @@ export default {
     },
     async latestHeight() {
       let res = await latestHeight();
-      if (!this.headersInfo.height || res != this.headersInfo.height) {
+      if (!this.headersInfo.height || res.height != this.headersInfo.height) {
         this.difficulty();
       }
       this.clearHomeTime = setTimeout(() => {
         this.latestHeight();
+        this.blocks();
+        this.transactions()
       }, 5000);
     },
 

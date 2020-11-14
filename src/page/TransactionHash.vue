@@ -80,7 +80,7 @@ export default {
     },
     async latestHeight() {
       let res = await latestHeight();
-      this.latesIndex = res;
+      this.latesIndex = res.height;
       this.transactions();
     },
     async transactions() {
