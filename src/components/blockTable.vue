@@ -17,7 +17,7 @@
     </el-table-column>
     <el-table-column prop="minerAddress" label="Minner" :show-overflow-tooltip="true">
       <template slot-scope="scope">
-        <div style="color: #409eff; cursor: pointer">
+        <div style="color: #409eff; cursor: pointer"  @click="toAddress(scope.row.minerAddress)">
           {{ scope.row.minerAddress? scope.row.minerAddress: '--' }}
         </div>
       </template>
@@ -50,6 +50,13 @@ export default {
       if (!height) return;
       this.$router.push({ path: "/blockDetails", query: { height } });
     },
+    toAddress(address) {
+       if (!address) return;
+      this.$router.push({
+        path: "/address",
+        query: { address: address },
+      });
+    }
   },
 };
 </script>
