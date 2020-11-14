@@ -6,7 +6,7 @@
         <img src="../assets/class_logo.svg" alt="" @click="tohome"/>
         <div class="banner-title">
           <p class="bann-classzz-name">Classzz Mainnet</p>
-          <p class="classzz-language" @click="changeLanguage">
+          <p class="classzz-language" @click="changeLanguage" style="display:none">
             <span :class="lan == 'zh' ? 'active borderl4' : 'borderl4'">中</span
             ><span :class="lan == 'en' ? 'active borderr4' : 'borderr4'"
               >英</span
@@ -55,13 +55,13 @@
         <div class="czz-nav-bar__content" v-if="!openInput">
           <div class="czz-nav-bar__left" @click="goBack" v-if="!home">
             <i class="el-icon-arrow-left blue1"></i
-            ><span class="czz-nav-bar__text">返回</span>
+            ><span class="czz-nav-bar__text"></span>
           </div>
           <div class="czz-nav-bar__left" v-if="home">
             <div class="logo-img" @click="tohome"></div>
             </div>
           <div class="czz-nav-bar__title czz-ellipsis">
-            CZZ
+            Classzz Explorer
           </div>
           <div class="czz-nav-bar__right czz-icon-right">
             <i
