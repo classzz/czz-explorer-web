@@ -210,6 +210,7 @@ text-align: center;
 }
 .id-price {
   flex: 5;
+  word-break: break-all;
 }
 @media screen and (max-width: 960px) {
   .pc-fee-table {
