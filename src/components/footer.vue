@@ -15,7 +15,7 @@
           </p>
         </div>
         <div>
-          <p>Powered by CZZ Eco Team | Copyright©czze.io 2019</p>
+          <p>Powered by ClassZZ Eco Team | Copyright©classzz.com 2020</p>
         </div>
       </div>
     </div>

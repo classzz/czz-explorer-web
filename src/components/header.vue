@@ -3,7 +3,7 @@
   <div class="banner" :style="{ height: heights }">
     <div class="banner-box pcContent">
       <div class="bann">
-        <img src="../assets/class_logo.svg" alt="" @click="tohome"/>
+        <img src="../assets/class_logo.svg" alt="" @click="tohome" class="head"/>
         <div class="banner-title">
           <p class="bann-classzz-name">Classzz Mainnet</p>
           <p class="classzz-language" @click="changeLanguage" style="display:none">
