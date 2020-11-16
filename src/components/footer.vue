@@ -4,7 +4,7 @@
       <div class="wenzi body pcContent">
         <div>
           <img src="../assets/class_logo.svg" />
-          <p class="classzz-language" @click="changeLanguage" style="display:none">
+          <p class="classzz-language" @click="changeLanguage">
             <span :class="lan == 'zh' ? 'active borderl4' : 'borderl4'">中</span
             ><span :class="lan == 'en' ? 'active borderr4' : 'borderr4'"
               >英</span
@@ -15,7 +15,7 @@
           </p>
         </div>
         <div>
-          <p>Powered by ClassZZ Eco Team | Copyright©classzz.com 2020</p>
+          <p>{{$t('footer.footerContent')}}</p>
         </div>
       </div>
     </div>

@@ -2,51 +2,51 @@
   <div class="mt2">
     <pcSecTitle
       :imgs="'4.jpg'"
-      :czzName="'Block'"
+      :czzName="$t('home.blockDetail')"
       :czzVal="`${search.height}`"
     />
     
     <ul class="sec-content">
       <li>
-        <div class="sec-name">Block Height</div>
+        <div class="sec-name">{{$t('home.blocks.blockHeight')}}</div>
         <div class="sec-val">{{ search.height }}</div>
       </li>
       <li>
-        <div class="sec-name">Size</div>
+        <div class="sec-name">{{$t('home.blocks.size')}}</div>
         <div class="sec-val">{{ search.size }} Bytes</div>
       </li>
       <li>
-        <div class="sec-name">Rewards</div>
+        <div class="sec-name">{{$t('home.blocks.reward')}}</div>
         <div class="sec-val">{{ search.reward }} CZZ</div>
       </li>
       <li>
-        <div class="sec-name">State</div>
+        <div class="sec-name">{{$t('home.blocks.state')}}</div>
         <div class="sec-val">{{search.state >= 14? 'Confirmed': `${search.state}/14`}}</div>
       </li>
       <li>
-        <div class="sec-name">Transaction Counts</div>
+        <div class="sec-name">{{$t('home.blocks.transactionCount')}}</div>
         <div class="sec-val">{{msgArray.length}}</div>
       </li>
       <li>
-        <div class="sec-name">Time</div>
+        <div class="sec-name">{{$t('home.blocks.time')}}</div>
         <div class="sec-val">{{ search.time }}</div>
       </li>
       <li>
-        <div class="sec-name">Block Hash</div>
+        <div class="sec-name">{{$t('home.blocks.blockHash')}}</div>
         <div class="sec-val">{{ search.hash }}</div>
       </li>
       <li>
-        <div class="sec-name">Nbits</div>
+        <div class="sec-name">{{$t('home.blocks.nbits')}}</div>
         <div class="sec-val">
           {{ search.bits }}
         </div>
       </li>
       <li>
-        <div class="sec-name">Previous Block Hash</div>
+        <div class="sec-name">{{$t('home.blocks.previousBlock')}}</div>
         <div class="sec-val blue1 head" @click="toPreviousBlock">{{ search.previousblockhash? search.previousblockhash : '--' }}</div>
       </li>
       <li>
-        <div class="sec-name">Mined By</div>
+        <div class="sec-name">{{$t('home.blocks.minedBy')}}</div>
         <div class="sec-val blue1 head" @click="toAddress">{{search.minerAddress ? search.minerAddress: '--'}}</div>
       </li>
     </ul>

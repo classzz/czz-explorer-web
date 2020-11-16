@@ -1,21 +1,21 @@
 <template>
   <div>
-    <pcSecTitle :imgs="'5.jpg'" :czzName="'Transaction Hash'" :czzVal="'f07326cf3a3308c88a7e8073d78037b0c21fd82ba1a556c06fcfc24bba33bac4'" />
+    <pcSecTitle :imgs="'5.jpg'" :czzName="$t('home.Transacitons.hash')" :czzVal="'f07326cf3a3308c88a7e8073d78037b0c21fd82ba1a556c06fcfc24bba33bac4'" />
     <ul class="sec-content">
       <li>
-        <div class="sec-name">Block Height</div>
+        <div class="sec-name">{{$t('home.blocks.blockHash')}}</div>
         <div class="sec-val blue1 head" @click="toBlockDetails(msgInfo.blockHeight)">{{msgInfo.blockHeight}}</div>
       </li>
       <li>
-        <div class="sec-name">State</div>
+        <div class="sec-name">{{$t('home.Transacitons.state')}}</div>
         <div class="sec-val">{{msgInfo.state >= 14? 'Confirmed': `${msgInfo.state}/14`}}</div>
       </li>
       <li>
-        <div class="sec-name">Fees</div>
+        <div class="sec-name">{{$t('home.Transacitons.fees')}}</div>
         <div class="sec-val">{{msgInfo.transFees}}</div>
       </li>
       <li>
-        <div class="sec-name">Time</div>
+        <div class="sec-name">{{$t('home.Transacitons.time')}}</div>
         <div class="sec-val">{{msgInfo.time}}</div>
       </li>
     </ul>

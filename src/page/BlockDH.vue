@@ -13,11 +13,11 @@
           color: '#409eff',
         }"
       >
-        <el-table-column prop="time" label="Date"></el-table-column>
-        <el-table-column prop="difficulty" label="Difficulty"></el-table-column>
+        <el-table-column prop="time" :label="$t('blockDh.date')"></el-table-column>
+        <el-table-column prop="difficulty" :label="$t('blockDh.difficulty')"></el-table-column>
         <el-table-column
           prop="hashRate"
-          label="Network Hash Rate"
+          :label="$t('blockDh.networkHash')"
         ></el-table-column>
       </el-table>
       <div
@@ -43,20 +43,20 @@
           <el-collapse-item :name="i" :key="`${i}`">
             <template slot="title">
               <ul class="block-dh-ul block-dh-ul-title">
-                <li class="czz-name">Network Hash Rate</li>
+                <li class="czz-name">{{$t('blockDh.networkHash')}}</li>
                 <li class="czz-value blue1">
                   {{ item.hashRate }}
                 </li>
               </ul>
             </template>
             <ul class="block-dh-ul">
-              <li class="czz-name">Difficulty</li>
+              <li class="czz-name">{{$t('blockDh.difficulty')}}</li>
               <li class="czz-value blue1">
                 {{ item.difficulty }}
               </li>
             </ul>
             <ul class="block-dh-ul">
-              <li class="czz-name">Date</li>
+              <li class="czz-name">{{$t('blockDh.date')}}</li>
               <li class="czz-value blue1">
                 {{ item.time }}
               </li>

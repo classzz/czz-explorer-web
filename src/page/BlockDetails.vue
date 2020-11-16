@@ -12,67 +12,67 @@
     </div>
     <div class="web-block">
       <div class="mt2"></div>
-      <titles :headerTitles="'Block'" />
+      <titles :headerTitles="$t('home.Transacitons.block')" />
       <czzCell
-        :titleName="'Block Height'"
+        :titleName="$t('home.blocks.blockHeight')"
         :titleVal="`${searchInfo.height}`"
         :cellTo="false"
         :isOmit="false"
       />
       <czzCell
-        :titleName="'Size'"
+        :titleName="$t('home.blocks.size')"
         :titleVal="`${searchInfo.size} Bytes`"
         :cellTo="false"
         :isOmit="false"
       />
       <czzCell
-        :titleName="'Rewards'"
+        :titleName="$t('home.blocks.reward')"
         :titleVal="`${searchInfo.reward}`"
         :cellTo="false"
         :isOmit="false"
       />
       <czzCell
-        :titleName="'State'"
+        :titleName="$t('home.blocks.state')"
         :titleVal="
-          searchInfo.state >= 14 ? 'Confirmed' : `${searchInfo.state}/14`
+          searchInfo.state >= 14 ? $t('home.blocks.confirmed') : `${searchInfo.state}/14`
         "
         :cellTo="false"
         :isOmit="false"
       />
       <czzCell
-        :titleName="'Transaction Counts'"
+        :titleName="$t('home.blocks.transactionCount')"
         :titleVal="`${detailInfo.length}`"
         :cellTo="false"
         :isOmit="false"
       />
       <czzCell
-        :titleName="'Time'"
+        :titleName="$t('home.blocks.time')"
         :titleVal="searchInfo.time"
         :cellTo="false"
         :isOmit="false"
       />
       
       <czzCell
-        :titleName="'Nbits'"
+        :titleName="$t('home.blocks.nbits')"
         :titleVal="`${searchInfo.bits}`"
         :cellTo="false"
         :isOmit="false"
       />
       <webSecTitle
-        :titleName="'Block Hash'"
+        :titleName="$t('home.blocks.blockHash')"
         :titleVal="`${searchInfo.hash}`"
         :isOmit="false"
       />
       <template v-if="!searchInfo.previousblockhash">
         <czzCell
-          :titleName="'Previous Block Hash'"
+          :titleName="$t('home.blocks.previousBlock')"
           :titleVal="'--'"
           :isOmit="false"
         />
       </template>
       <template v-if="searchInfo.previousblockhash">
         <webSecTitle
-          :titleName="'Previous Block Hash'"
+          :titleName="$t('home.blocks.previousBlock')"
           :titleVal="searchInfo.previousblockhash"
           @click="toPreviouseBlock"
           :cellTo="true"
@@ -81,14 +81,14 @@
       </template>
       <template v-if="!searchInfo.minerAddress">
         <czzCell
-          :titleName="'Mined By'"
+          :titleName="$t('home.blocks.minedBy')"
           :titleVal="'--'"
           :isOmit="false"
         />
       </template>
       <template v-if="searchInfo.minerAddress">
         <webSecTitle
-          :titleName="'Mined By'"
+          :titleName="$t('home.blocks.minedBy')"
           :titleVal="searchInfo.minerAddress"
           @click="toAddress"
           :cellTo="true"

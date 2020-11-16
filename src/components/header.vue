@@ -6,7 +6,7 @@
         <img src="../assets/class_logo.svg" alt="" @click="tohome" class="head"/>
         <div class="banner-title">
           <p class="bann-classzz-name">Classzz Mainnet</p>
-          <p class="classzz-language" @click="changeLanguage" style="display:none">
+          <p class="classzz-language" @click="changeLanguage">
             <span :class="lan == 'zh' ? 'active borderl4' : 'borderl4'">中</span
             ><span :class="lan == 'en' ? 'active borderr4' : 'borderr4'"
               >英</span
@@ -14,9 +14,9 @@
           </p>
         </div>
       </div>
-      <h2 v-if="h2Title">Classzz Explorer</h2>
+      <h2 v-if="h2Title">{{$t('header.name')}}</h2>
       <div class="ban-input">
-        <el-input placeholder="请输入内容" v-model="input">
+        <el-input :placeholder="$t('header.input')" v-model="input">
           <el-button
             slot="append"
             icon="el-icon-search"
@@ -41,7 +41,7 @@
                 <div class="czz-field__body">
                   <input
                     type="search"
-                    placeholder="请输入搜索关键词"
+                    :placeholder="$t('header.input')"
                     class="czz-field__control"
                     v-model="input"
                     @keyup.enter="toChange"
@@ -61,7 +61,7 @@
             <div class="logo-img" @click="tohome"></div>
             </div>
           <div class="czz-nav-bar__title czz-ellipsis">
-            Classzz Explorer
+           {{$t('header.name')}}
           </div>
           <div class="czz-nav-bar__right czz-icon-right">
             <i

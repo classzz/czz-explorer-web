@@ -7,27 +7,27 @@
     </div>
     <div class="web-block">
       <div class="mt2"></div>
-      <titles :headerTitles="'Address'" />
+      <titles :headerTitles="$t('home.address')" />
       <webSecTitle
-        :titleName="'address'"
+        :titleName="$t('home.addressInfo.address')"
         :titleVal="`${addressInfo.address}`"
         :cellTo="false"
         :isOmit="false"
       />
       <czzCell
-        :titleName="'Total Balance'"
+        :titleName="$t('home.addressInfo.balance')"
         :titleVal="`${addressInfo.balance ? addressInfo.balance : '--'}`"
         :cellTo="false"
         :isOmit="false"
       />
       <czzCell
-        :titleName="'Total Revenue'"
+        :titleName="$t('home.addressInfo.revenue')"
         :titleVal="`${addressInfo.totalInput ? addressInfo.totalInput : '--'}`"
         :cellTo="false"
         :isOmit="false"
       />
       <czzCell
-        :titleName="'Total Sent'"
+        :titleName="$t('home.addressInfo.sent')"
         :titleVal="`${
           addressInfo.totalOutput ? addressInfo.totalOutput : '--'
         }`"
@@ -35,7 +35,7 @@
         :isOmit="false"
       />
       <czzCell
-        :titleName="'Transaction Counts'"
+        :titleName="$t('home.addressInfo.counts')"
         :titleVal="`${addressInfo.txCount ? addressInfo.txCount : '--'}`"
         :cellTo="false"
         :isOmit="false"

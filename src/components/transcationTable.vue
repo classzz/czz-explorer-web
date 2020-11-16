@@ -8,35 +8,35 @@
       color: '#409eff',
     }"
   >
-    <el-table-column prop="txid" label="Transaction Hash" :show-overflow-tooltip="true">
+    <el-table-column prop="txid" :label="$t('home.Transacitons.hash')" :show-overflow-tooltip="true">
       <template slot-scope="scope">
         <div style="color: #409eff; cursor: pointer" @click="toTransactionHash(scope.row.txid)">
           {{ scope.row.txid }}
         </div>
       </template>
     </el-table-column>
-    <el-table-column prop="blockHeight" label="Block" :show-overflow-tooltip="true">
+    <el-table-column prop="blockHeight" :label="$t('home.Transacitons.block')" :show-overflow-tooltip="true">
         <template slot-scope="scope">
         <div style="color: #409eff; cursor: pointer" @click="toBlockDetails(scope.row.blockHeight)">
           {{ scope.row.blockHeight }}
         </div>
       </template>
     </el-table-column>
-    <el-table-column prop="time" label="Time"></el-table-column>
-    <el-table-column prop="'coinbase'" label="From"> 
-      <template>coinbase</template>
+    <el-table-column prop="time" :label="$t('home.Transacitons.time')"></el-table-column>
+    <el-table-column prop="'coinbase'" :label="$t('home.Transacitons.from')"> 
+      <template>{{$t('home.Transacitons.coinbase')}}</template>
     </el-table-column>
-    <el-table-column prop="to" label="To">
+    <el-table-column prop="to" :label="$t('home.Transacitons.to')">
       <template>
         --
       </template>
     </el-table-column>
-    <el-table-column prop="state" label="State">
+    <el-table-column prop="state" :label="$t('home.Transacitons.state')">
       <template slot-scope="scope">
-        {{(scope.$index >= 14) ? 'Confirmed' : `${scope.$index}/14`}}
+        {{(scope.$index >= 14) ? $t('home.blocks.confirmed') : `${scope.$index}/14`}}
       </template>
     </el-table-column>
-    <el-table-column prop="transFees" label="Fees"> </el-table-column>
+    <el-table-column prop="transFees" :label="$t('home.Transacitons.fees')"> </el-table-column>
   </el-table>
 </template>
 

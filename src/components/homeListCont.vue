@@ -10,12 +10,10 @@
           @select="handleSelect"
         >
           <el-menu-item index="1"
-            ><img src="./../assets/4.jpg" class="list-cont-img" /> Latest
-            Block</el-menu-item
+            ><img src="./../assets/4.jpg" class="list-cont-img" />{{$t('home.latestBlock')}}</el-menu-item
           >
           <el-menu-item index="2"
-            ><img src="./../assets/2.jpg" class="list-cont-img" />Latest
-            Transcation</el-menu-item
+            ><img src="./../assets/2.jpg" class="list-cont-img" />{{$t('home.latestTransaciton')}}</el-menu-item
           >
         </el-menu>
       </div>
@@ -23,22 +21,22 @@
         <template v-if="tableIndex == 1">
           <blockTable :block-table="homeBlockTable" />
           <div class="get-more">
-            <el-button type="text" @click="toLatestBlock">more>></el-button>
+            <el-button type="text" @click="toLatestBlock">{{$t('home.Transacitons.more')}}</el-button>
           </div>
         </template>
         <template v-if="tableIndex == 2">
           <transcationTable :transaction-table="transactionTable" />
           <div class="get-more">
-            <el-button type="text" @click="toLatestTransaction">more>></el-button>
+            <el-button type="text" @click="toLatestTransaction">{{$t('home.Transacitons.more')}}</el-button>
           </div>
         </template>
       </div>
     </div>
     <div class="web-content-cart">
-      <titles :header-titles="'Latest Block'" :more="true" @click="toLatestBlock"/>
+      <titles :header-titles="$t('home.latestBlock')" :more="true" @click="toLatestBlock"/>
       <template v-for="(item, j) in homeBlockTable">
         <czzCell
-          :titleName="'Block Height'"
+          :titleName="$t('home.blocks.blockHeight')"
           :titleVal="`${item.height}`"
           :key="`${j}`"
           cellTo
@@ -46,10 +44,10 @@
           @click="toBlockDetails(item.height)"
         />
       </template>
-      <titles :header-titles="'Latest Transaction'" :more="true" @click="toLatestTransaction"/>
+      <titles :header-titles="$t('home.latestTransaciton')" :more="true" @click="toLatestTransaction"/>
       <template v-for="(item, i) in transactionTable">
         <czzCell
-          :titleName="'Transaction Hash'"
+          :titleName="$t('home.Transacitons.hash')"
           :titleVal="item.txid"
           :key="item.id"
           cellTo

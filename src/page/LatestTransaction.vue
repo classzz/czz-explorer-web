@@ -15,39 +15,39 @@
       </div>
     </div>
     <div class="webContern mt2">
-      <titles :headerTitles="'All Transactions'" />
+      <titles :headerTitles="$t('home.allTransactions')" />
       <el-collapse v-model="index" v-loading="loading" accordion>
         <template v-for="(item, i) in transactionTable">
           <el-collapse-item :name="i" :key="`${i}`">
             <template slot="title">
               <ul class="block-dh-ul block-dh-ul-title">
-                <li class="czz-name">Transaction Hash</li>
+                <li class="czz-name">{{$t('home.Transacitons.hash')}}</li>
                 <li class="czz-value blue1 omit">
                   <!-- item.txid {{  }}-->
-                  <span @click.stop="toBlockDetails(item.txid)" class="omit">FFEWDSAFAEWW</span>
+                  <span @click.stop="toBlockDetails(item.txid)" class="omit">{{ item.txid }}</span>
                 </li>
               </ul>
             </template>
             <ul class="block-dh-ul">
-              <li class="czz-name">Block</li>
+              <li class="czz-name">{{$t('home.Transacitons.block')}}</li>
               <li class="czz-value blue1">
                 <span @click.stop="toBlockDetails(item.blockHeight)">{{ item.blockHeight }}</span>
               </li>
             </ul>
             <ul class="block-dh-ul">
-              <li class="czz-name">Time</li>
+              <li class="czz-name">{{$t('home.Transacitons.time')}}</li>
               <li class="czz-value">
                 {{ item.time }}
               </li>
             </ul>
             <ul class="block-dh-ul">
-              <li class="czz-name">State</li>
+              <li class="czz-name">{{$t('home.Transacitons.state')}}</li>
               <li class="czz-value">
-                {{(pagination.page> 1 || i>= 14) ? 'Confirmed' : `${i}/14`}}
+                {{(pagination.page> 1 || i>= 14) ? $t('home.blocks.confirmed') : `${i}/14`}}
               </li>
             </ul>
             <ul class="block-dh-ul">
-              <li class="czz-name">Fees</li>
+              <li class="czz-name">{{$t('home.Transacitons.fees')}}</li>
               <li class="czz-value">
                 {{ item.transFees }}
               </li>

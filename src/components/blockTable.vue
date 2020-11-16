@@ -8,28 +8,28 @@
       color: '#409eff',
     }"
   >
-    <el-table-column prop="height" label="Block Height">
+    <el-table-column prop="height" :label="$t('home.blocks.blockHeight')">
       <template slot-scope="scope">
         <div style="color: #409eff; cursor: pointer" @click="toBlockDetails(scope.row.height)">
           {{ scope.row.height }}
         </div>
       </template>
     </el-table-column>
-    <el-table-column prop="minerAddress" label="Minner" :show-overflow-tooltip="true">
+    <el-table-column prop="minerAddress" :label="$t('home.blocks.minner')" :show-overflow-tooltip="true">
       <template slot-scope="scope">
         <div style="color: #409eff; cursor: pointer"  @click="toAddress(scope.row.minerAddress)">
           {{ scope.row.minerAddress? scope.row.minerAddress: '--' }}
         </div>
       </template>
     </el-table-column>
-    <el-table-column prop="size" label="Size(Bytes)"></el-table-column>
-    <el-table-column prop="reward" label="Rewards(CZZ)"> </el-table-column>
-    <el-table-column prop="state" label="State">
+    <el-table-column prop="size" :label="$t('home.blocks.size')"></el-table-column>
+    <el-table-column prop="reward" :label="$t('home.blocks.reward')"> </el-table-column>
+    <el-table-column prop="state" :label="$t('home.blocks.state')">
       <template slot-scope="scope">
-        {{(page> 1 || scope.$index >= 14) ? 'Confirmed' : `${scope.$index}/14`}}
+        {{(page> 1 || scope.$index >= 14) ? $t('home.blocks.confirmed') : `${scope.$index}/14`}}
       </template>
     </el-table-column>
-    <el-table-column prop="time" label="Time"> </el-table-column>
+    <el-table-column prop="time" :label="$t('home.blocks.time')"> </el-table-column>
   </el-table>
 </template>
 

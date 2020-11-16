@@ -3,7 +3,7 @@
     <div class="pc-fee-table">
       <pcSecTitle
         :imgs="'2.jpg'"
-        :czzName="'Transaction Information'"
+        :czzName="$t('home.transactionInfo')"
       />
       <div class="czz-fee-table">
         <ul class="table-header bb" v-for="(item,i) in transactionsList"
@@ -12,7 +12,7 @@
             <div>ID {{ item.txid }}</div>
             <div></div>
             <div>
-              Fee: <span class="blue1">{{ item.transFees }}</span>
+              {{$t('home.Transacitons.fees')}}: <span class="blue1">{{ item.transFees }}</span>
             </div>
           </li>
           <li>
@@ -36,7 +36,7 @@
       </div>
     </div>
     <div class="web-fee-table">
-      <titles :headerTitles="'Transaction Information'" />
+      <titles :headerTitles="$t('home.transactionInfo')" />
       <div
         v-for="(item, i) in transactionsList"
         :key="i"
@@ -44,20 +44,20 @@
         style="margin-bottom: 10px; padding-bottom: 10px"
       >
         <webSecTitle
-          :titleName="'Time'"
+          :titleName="$t('home.Transacitons.time')"
           :titleVal="`${item.time}`"
           :isOmit="false"
         />
         <webSecTitle :titleName="'ID'" :titleVal="item.txid" :isOmit="false" />
         <webSecTitle
-          :titleName="'Send'"
+          :titleName="$t('home.Transacitons.send')"
           :arrCont="item.in"
           :titleVal="item.in.length <= 0 ? 'coinbase' : ''"
           :isOmit="false"
           @clicks="toAddress"
         />
         <webSecTitle
-          :titleName="'Accept'"
+          :titleName="$t('home.Transacitons.accept')"
           :arrCont="item.out"
           :isOmit="false"
           @clicks="toAddress"

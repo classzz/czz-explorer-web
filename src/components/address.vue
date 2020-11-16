@@ -2,24 +2,24 @@
   <div class="mt2">
     <pcSecTitle
       :imgs="'8.jpg'"
-      :czzName="'Address'"
+      :czzName="$t('home.address')"
       :czzVal="`${msgObj.address}`"
     />
     <ul class="sec-content">
       <li>
-        <div class="sec-name">Total Balance</div>
+        <div class="sec-name">{{$t('home.addressInfo.balance')}}</div>
         <div class="sec-val">{{ msgObj.balance ? msgObj.balance: '--'}}</div>
       </li>
       <li>
-        <div class="sec-name">Total Revenue</div>
+        <div class="sec-name">{{$t('home.addressInfo.revenue')}}</div>
         <div class="sec-val">{{ msgObj.totalInput? `${msgObj.totalInput} CZZ`: '--' }} </div>
       </li>
       <li>
-        <div class="sec-name">Total Sent</div>
+        <div class="sec-name">{{$t('home.addressInfo.sent')}}</div>
         <div class="sec-val">{{ msgObj.totalOutput? `${msgObj.totalOutput} CZZ` : '--' }} </div>
       </li>
       <li>
-        <div class="sec-name">Transaction Counts</div>
+        <div class="sec-name">{{$t('home.addressInfo.counts')}}</div>
         <div class="sec-val">{{msgObj.txCount? msgObj.txCount : '--'}}</div>
       </li>
     </ul>

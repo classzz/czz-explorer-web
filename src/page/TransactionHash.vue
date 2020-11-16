@@ -7,34 +7,34 @@
     </div>
     <div class="web-block">
       <div class="mt2"></div>
-      <titles :headerTitles="'Transaction Hash'" />
+      <titles :headerTitles="$t('home.Transacitons.hash')" />
       <czzCell
-        :titleName="'Block Height'"
+        :titleName="$t('home.blocks.blockHash')"
         :titleVal="`${transInfo.blockHeight}`"
         @click="toBlockDetails(transInfo.blockHeight)"
         cellTo
         :isOmit="false"
       />
       <czzCell
-        :titleName="'State'"
-        :titleVal="transInfo.state >= 14? 'Confirmed': `${transInfo.state}/14`"
+        :titleName="$t('home.Transacitons.state')"
+        :titleVal="transInfo.state >= 14? $t('home.blocks.confirmed'): `${transInfo.state}/14`"
         :cellTo="false"
         :isOmit="false"
       />
       <czzCell
-        :titleName="'Fees'"
+        :titleName="$t('home.Transacitons.fees')"
         :titleVal="`${transInfo.transFees}`"
         :cellTo="false"
         :isOmit="false"
       />
       <czzCell
-        :titleName="'Time'"
+        :titleName="$t('home.Transacitons.time')"
         :titleVal="transInfo.time"
         :cellTo="false"
         :isOmit="false"
       />
       <webSecTitle
-        :titleName="'Transaction Hash'"
+        :titleName="$t('home.Transacitons.hash')"
         :titleVal="hashId"
         :cellTo="false"
         :isOmit="false"

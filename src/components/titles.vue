@@ -2,7 +2,7 @@
   <!-- 一级标题 -->
   <div class="first-title bb">
     <div class="header-title">{{ headerTitles }}</div>
-    <span class="text-more" v-if="more" @click="toMore">more<i class="el-icon-arrow-right"></i></span>
+    <span class="text-more" v-if="more" @click="toMore">{{$t('home.Transacitons.more')}}<i class="el-icon-arrow-right"></i></span>
   </div>
   
 </template>

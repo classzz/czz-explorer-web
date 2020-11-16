@@ -15,44 +15,44 @@
       </div>
     </div>
     <div class="webContern mt2">
-      <titles :headerTitles="'All Block'" />
+      <titles :headerTitles="$t('home.allBlock')" />
       <el-collapse v-model="index" v-loading="loading" accordion>
         <template v-for="(item, i) in blockTable">
           <el-collapse-item :name="i" :key="`${i}`">
             <template slot="title">
               <ul class="block-dh-ul block-dh-ul-title">
-                <li class="czz-name">Block Height</li>
+                <li class="czz-name">{{$t('home.blocks.blockHeight')}}</li>
                 <li class="czz-value blue1">
                   <span @click.stop="toBlockDetails(item.height)">{{ item.height }}</span>
                 </li>
               </ul>
             </template>
             <ul class="block-dh-ul">
-              <li class="czz-name">Minner</li>
+              <li class="czz-name">{{$t('home.blocks.minner')}}</li>
               <li class="czz-value">
                 {{ item.minerAddress? item.minerAddress: '--' }}
               </li>
             </ul>
             <ul class="block-dh-ul">
-              <li class="czz-name">Size(Bytes)</li>
+              <li class="czz-name">{{$t('home.blocks.size')}}</li>
               <li class="czz-value">
                 {{ item.size }}
               </li>
             </ul>
             <ul class="block-dh-ul">
-              <li class="czz-name">Rewards(CZZ)</li>
+              <li class="czz-name">{{$t('home.blocks.reward')}}</li>
               <li class="czz-value">
                 {{ item.reward }}
               </li>
             </ul>
             <ul class="block-dh-ul">
-              <li class="czz-name">State</li>
+              <li class="czz-name">{{$t('home.blocks.state')}}</li>
               <li class="czz-value">
-                {{(pagination.page> 1 || i>= 14) ? 'Confirmed' : `${i}/14`}}
+                {{(pagination.page> 1 || i>= 14) ? $t('home.blocks.confirmed') : `${i}/14`}}
               </li>
             </ul>
             <ul class="block-dh-ul">
-              <li class="czz-name">Time</li>
+              <li class="czz-name">{{$t('home.blocks.time')}}</li>
               <li class="czz-value">
                 {{ item.time }}
               </li>

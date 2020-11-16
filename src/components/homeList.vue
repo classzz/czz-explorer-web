@@ -3,12 +3,12 @@
     <ul ref="uls">
       <li :style="{ width: widths }">
         <img src="./../assets/3.jpg" alt="" />
-        <span class="title">Network Hash Rate</span>
+        <span class="title">{{$t('home.hash')}}</span>
         <span>{{objData.hashRate}} H/s</span>
       </li>
       <li :style="{ width: widths }">
         <img src="./../assets/7.jpg" alt="" />
-        <span class="title">Block Difficulty</span>
+        <span class="title">{{$t('home.block')}}</span>
         <span>{{objData.difficulty}}</span>
       </li>
       <li
@@ -17,7 +17,7 @@
         @click="toBlockDh"
         v-if="isShow"
       >
-        <span class="title">Block Difficulty History</span>
+        <span class="title">{{$t('home.difficulty')}}</span>
         <i class="el-icon-arrow-right"></i>
       </li>
     </ul>
