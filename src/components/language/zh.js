@@ -3,7 +3,7 @@ module.exports = {
         name: '中文'
     },
     header: {
-        name: 'Classzz资源管理',
+        name: 'Classzz区块浏览器',
         input: '区块高度，哈希，地址',
     },
     footer: {
@@ -11,32 +11,32 @@ module.exports = {
     },
     home: {
         hash: '网路哈希率',
-        block: '阻止难度',
-        difficulty: '阻止难度记录',
+        block: '挖矿难度',
+        difficulty: '挖矿难度记录',
         latestBlock: '最新区块',
         blocks: {
-            blockHeight: '快高',
+            blockHeight: '块高度',
             minner: '矿工',
             size: '大小(Bytes)',
             reward: '奖励(CZZ)',
-            state: '州',
-            time: '时间',
+            state: '确认数',
+            time: '出块时间',
             confirmed: '已确认',
             transactionCount: '交易个数',
-            nbits: '位数',
-            blockHash: '区块',
+            nbits: '难度',
+            blockHash: '区块hash',
             previousBlock: '上一区块',
-            minedBy: '开采者'
+            minedBy: '矿工地址'
         },
         latestTransaciton: '最新交易',
         Transacitons: {
             hash: '交易哈希',
             block: '块',
-            time: '时间',
+            time: '出块时间',
             from: '从',
             to: '至',
-            state: '州',
-            fees: '费用',
+            state: '确认数',
+            fees: '手续费',
             more: '查看更多',
             coinbase: '币',
             send: '发送',

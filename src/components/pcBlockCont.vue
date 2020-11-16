@@ -3,7 +3,7 @@
     <pcSecTitle
       :imgs="'4.jpg'"
       :czzName="$t('home.blockDetail')"
-      :czzVal="`${search.height}`"
+      :czzVal="''"
     />
     
     <ul class="sec-content">
