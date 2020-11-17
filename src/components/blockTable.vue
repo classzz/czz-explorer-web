@@ -15,9 +15,9 @@
         </div>
       </template>
     </el-table-column>
-    <el-table-column prop="minerAddress" :label="$t('home.blocks.minner')" :show-overflow-tooltip="true">
+    <el-table-column prop="minerAddress" :label="$t('home.blocks.minner')" width="350">
       <template slot-scope="scope">
-        <div style="color: #409eff; cursor: pointer"  @click="toAddress(scope.row.minerAddress)">
+        <div style="width: 100%; color: #409eff; cursor: pointer"  @click="toAddress(scope.row.minerAddress)">
           {{ scope.row.minerAddress? scope.row.minerAddress: '--' }}
         </div>
       </template>

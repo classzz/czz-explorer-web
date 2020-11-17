@@ -8,7 +8,7 @@
       color: '#409eff',
     }"
   >
-    <el-table-column prop="txid" :label="$t('home.Transacitons.hash')" :show-overflow-tooltip="true">
+    <el-table-column prop="txid" :label="$t('home.Transacitons.hash')"  width="350">
       <template slot-scope="scope">
         <div style="color: #409eff; cursor: pointer" @click="toTransactionHash(scope.row.txid)">
           {{ scope.row.txid }}
