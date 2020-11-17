@@ -7,7 +7,7 @@ module.exports = {
         input: '区块高度，哈希，地址',
     },
     footer: {
-        footerContent: '由CZZ Eco Team提供技术支持| 版权所有classzz.com 2020'
+        footerContent: '由CZZ Eco Team提供技术支持| 版权所有©classzz.com 2020'
     },
     home: {
         hash: '网路哈希率',
