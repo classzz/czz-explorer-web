@@ -43,6 +43,7 @@ module.exports = {
             accept: 'Accept'
         },
         transactionInfo: 'Transaction Information',
+        transactionChange: 'Transaction Change',
         blockDetail: 'Block',
         address: 'Address',
         addressInfo: {

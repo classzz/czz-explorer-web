@@ -1,11 +1,11 @@
 <template>
   <div class="mt2">
     <div class="pc-fee-table">
-      <pcSecTitle :imgs="'2.jpg'" :czzName="$t('home.transactionInfo')" />
+      <pcSecTitle :imgs="'2.jpg'" :czzName="$t('home.transactionChange')" />
       <div class="czz-fee-table">
         <ul
           class="table-header bb"
-          v-for="(item, i) in transactionsList"
+          v-for="(item, i) in transactionsChange"
           :key="i"
         >
           <li>
@@ -81,15 +81,13 @@
 import pcSecTitle from "./pcSecTitle";
 import titles from "./titles";
 import webSecTitle from "./webSecTtitle";
-import transactionChange from "./transactionChange";
-import { transactions, wallet } from "./../api/api";
+import { transactions, wallet } from "../api/api";
 export default {
   props: ["height", "hash", "walletInfo", "transactionsList"],
   components: {
     pcSecTitle,
     titles,
     webSecTitle,
-    transactionChange
   },
   data() {
     return {

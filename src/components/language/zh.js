@@ -43,6 +43,7 @@ module.exports = {
             accept: '接收'
         },
         transactionInfo: '交易信息',
+        transactionChange: '交易状态',
         blockDetail: '区块信息',
         address: '地址信息',
         addressInfo: {

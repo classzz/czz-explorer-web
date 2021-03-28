@@ -21,5 +21,5 @@ export const wallet = (params) => ajax.get(`v1/transactions/wallet`, params)
 //v1/account/search
 export const acsearch = (params) => ajax.get(`v1/account/search`, params)
 
-
-
+// v1/transactions/dh
+export const transactions_dh = (params) => ajax.get(`v1/transactions/dh`, params)
