@@ -29,6 +29,7 @@ module.exports = {
             minedBy: 'Mined By'
         },
         latestTransaciton: 'Latest Transaction',
+        latestTransacitonChange: 'Latest Transaction Change',
         Transacitons: {
             hash: 'Transaction Hash',
             block: 'Block',

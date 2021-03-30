@@ -29,6 +29,7 @@ module.exports = {
             minedBy: '矿工地址'
         },
         latestTransaciton: '最新交易',
+        latestTransacitonChange: '最新状态',
         Transacitons: {
             hash: '交易哈希',
             block: '块',

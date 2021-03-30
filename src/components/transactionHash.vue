@@ -1,6 +1,6 @@
 <template>
   <div>
-    <pcSecTitle :imgs="'5.jpg'" :czzName="$t('home.Transacitons.hash')" :czzVal="'f07326cf3a3308c88a7e8073d78037b0c21fd82ba1a556c06fcfc24bba33bac4'" />
+    <pcSecTitle :imgs="'5.jpg'" :czzName="$t('home.Transacitons.hash')" :czzVal="hashId" />
     <ul class="sec-content">
       <li>
         <div class="sec-name">{{$t('home.blocks.blockHash')}}</div>
@@ -29,6 +29,7 @@ export default {
     pcSecTitle,
   },
   props: {
+    hashId:"",
     msgInfo:{
       type: Object,
       default: {}

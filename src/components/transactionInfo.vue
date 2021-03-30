@@ -81,15 +81,13 @@
 import pcSecTitle from "./pcSecTitle";
 import titles from "./titles";
 import webSecTitle from "./webSecTtitle";
-import transactionChange from "./transactionChange";
 import { transactions, wallet } from "./../api/api";
 export default {
   props: ["height", "hash", "walletInfo", "transactionsList"],
   components: {
     pcSecTitle,
     titles,
-    webSecTitle,
-    transactionChange
+    webSecTitle
   },
   data() {
     return {

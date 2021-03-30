@@ -2,8 +2,13 @@
   <div class="block-detail">
     <Header :heights="'180px'" />
     <div class="pcContent pc-card mt2">
-      <transactionHash :msgInfo="transInfo"/>
-      <transactionInfo :transactionsList="detailInfo" :hash="hashId" ref="pchashRef"/>
+      <transactionHash :msgInfo="transInfo" :hashId="hashId" />
+      <transactionInfo
+        :transactionsList="detailInfo"
+        :hash="hashId"
+        ref="pchashRef"
+      />
+      <transactionChange :hashId="hashId" :dhItems="dhItems" />
     </div>
     <div class="web-block">
       <div class="mt2"></div>
@@ -17,7 +22,11 @@
       />
       <czzCell
         :titleName="$t('home.Transacitons.state')"
-        :titleVal="transInfo.state >= 14? $t('home.blocks.confirmed'): `${transInfo.state}/14`"
+        :titleVal="
+          transInfo.state >= 14
+            ? $t('home.blocks.confirmed')
+            : `${transInfo.state}/14`
+        "
         :cellTo="false"
         :isOmit="false"
       />
@@ -41,8 +50,13 @@
       />
       <div class="mt2"></div>
       <!-- <titles :headerTitles="'Transaction Information'" /> -->
-      <transactionInfo :transactionsList="detailInfo" :hash="hashId" ref="hashRef"/>
+      <transactionInfo
+        :transactionsList="detailInfo"
+        :hash="hashId"
+        ref="hashRef"
+      />
     </div>
+
     <Footer />
   </div>
 </template>
@@ -52,31 +66,34 @@ import Header from "./../components/header";
 import Footer from "./../components/footer";
 import transactionHash from "./../components/transactionHash";
 import transactionInfo from "./../components/transactionInfo";
+import transactionChange from "./../components/transactionChange";
 import czzCell from "./../components/czzCell";
 import titles from "./../components/titles";
 import webSecTitle from "./../components/webSecTtitle";
-import { latestHeight, transactions } from "./../api/api";
+import { latestHeight, transactions, transactions_dh } from "./../api/api";
 export default {
   components: {
     Footer,
     Header,
     transactionHash,
     transactionInfo,
+    transactionChange,
     czzCell,
     titles,
     webSecTitle,
   },
   data() {
     return {
-      hashId: '',
+      hashId: "",
       latesIndex: 0,
       transInfo: {},
-      detailInfo: []
-    }
+      detailInfo: [],
+      dhItems: [],
+    };
   },
   methods: {
     toBlockDetails(height) {
-      if(!height) return;
+      if (!height) return;
       this.$router.push({ path: "/blockDetails", query: { height } });
     },
     async latestHeight() {
@@ -86,20 +103,20 @@ export default {
     },
     async transactions() {
       let { items } = await transactions({ transHash: this.hashId });
-      let itemInfo = items[0]
+      let itemInfo = items[0];
       itemInfo.time = this.$format(itemInfo.createdTime);
-      itemInfo.state = this.latesIndex - itemInfo.blockHeight
+      itemInfo.state = this.latesIndex - itemInfo.blockHeight;
       this.transInfo = itemInfo;
-      this.getList(items)
+      this.getList(items);
       // this.$refs.pchashRef.getTransaction()
       // this.$refs.hashRef.getTransaction()
     },
 
     getList(arr) {
-      arr.forEach((item,i) => {
+      arr.forEach((item, i) => {
         item.time = this.$format(item.createdTime);
         item.in = [];
-        item.vin.forEach((itm,k) => {
+        item.vin.forEach((itm, k) => {
           if (itm.value) {
             item.in.push({
               val: itm.address,
@@ -119,10 +136,21 @@ export default {
       });
       this.detailInfo = arr;
     },
+    async getTransDH() {
+      let post = {
+        page: 1,
+        limit: 5,
+        txhash: this.hashId,
+      };
+      let result = await transactions_dh(post);
+      console.log(result.items);
+      this.dhItems = result.items;
+    },
   },
   mounted() {
-    this.hashId = this.$route.query.transHash
+    this.hashId = this.$route.query.transHash;
     this.latestHeight();
+    this.getTransDH();
   },
 };
 </script>
