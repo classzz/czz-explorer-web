@@ -5,7 +5,7 @@
       <div class="bann">
         <img src="../assets/class_logo.svg" alt="" @click="tohome" class="head"/>
         <div class="banner-title">
-          <p class="bann-classzz-name">Classzz testnet Mainnet</p>
+          <p class="bann-classzz-name">Classzz testnet</p>
           <p class="classzz-language" @click="changeLanguage">
             <span :class="lan == 'zh' ? 'active borderl4' : 'borderl4'">中</span
             ><span :class="lan == 'en' ? 'active borderr4' : 'borderr4'"
