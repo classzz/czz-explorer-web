@@ -13,7 +13,8 @@ module.exports = {
     assetsPublicPath: '/',
     proxyTable: {
       '/v1': {
-        target: 'http://localhost:8384/',//后端接口地址
+        // target: 'http://localhost:8384/',//后端接口地址
+        target: 'https://testnet.classzz.com/',//后端接口地址
         changeOrigin: true,//是否允许跨越
         pathRewrite: {
           '^/v1': '/v1'
@@ -29,7 +30,7 @@ module.exports = {
     notifyOnErrors: true,
     poll: false, // https://webpack.js.org/configuration/dev-server/#devserver-watchoptions-
 
-    
+
     /**
      * Source Maps
      */
@@ -43,7 +44,7 @@ module.exports = {
     cacheBusting: true,
 
     cssSourceMap: true,
-    
+
   },
 
   build: {
