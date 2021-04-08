@@ -3,7 +3,6 @@
     <pcSecTitle
       :imgs="'5.jpg'"
       :czzName="$t('home.transactionChange')"
-      :czzVal="hashId"
     />
     <div v-for="item in dhItems" :key="item.mid">
       <ul class="sec-content">
@@ -33,19 +32,19 @@
         </li>
         <li>
           <div class="sec-name">ext_tx_hash</div>
-          <div class="sec-val">
+          <div class="sec-val head" @click="toConfirm(item.asset_type, item.tx_hash)">
             {{ item.ext_tx_hash }}
           </div>
         </li>
         <li>
           <div class="sec-name">tx_hash</div>
-          <div class="sec-val">
+          <div class="sec-val head" @click="toTransactionHash(item.tx_hash)">
             {{ item.tx_hash }}
           </div>
         </li>
         <li>
           <div class="sec-name">confirm_ext_tx_hash</div>
-          <div class="sec-val">
+          <div class="sec-val head" @click="toConfirm(item.convert_type, item.tx_hash)">
             {{ item.confirm_ext_tx_hash }}
           </div>
         </li>
@@ -89,7 +88,22 @@ export default {
       loading: false,
     };
   },
-  methods: {},
+  methods: {
+    toTransactionHash(hash) {
+      if(!hash) return;
+      this.$router.push({ path:'/transactionHash', query: { transHash: hash } });
+    },
+    toConfirm(type, hash) {
+      const typeData = {
+        'ETH': 'https://ropsten.etherscan.io/tx/',
+        'HECO': 'https://testnet.hecoinfo.com/tx/',
+        'BSC': 'https://testnet.bscscan.com/tx/',
+      }
+      if(!hash) return;
+      let url = typeData[type] + hash;
+      window.open(url, '_blank');
+    },
+  },
   mounted() {},
 };
 </script>
