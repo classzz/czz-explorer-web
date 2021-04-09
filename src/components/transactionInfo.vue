@@ -9,7 +9,9 @@
           :key="i"
         >
           <li>
-            <div>ID {{ item.txid }}</div>
+            <div>ID 
+              <span class="blue1 head" @click="toTransacitons(item.txid)">{{ item.txid }}</span>
+            </div>
             <div></div>
             <div>
               {{ $t("home.Transacitons.fees") }}:
@@ -155,6 +157,13 @@ export default {
         query: { address: val },
       });
     },
+    
+    toTransacitons(txid){
+      this.$router.push({
+        path: "/transactionHash",
+        query: { transHash: txid },
+      });
+    }
   },
   mounted() {},
 };
