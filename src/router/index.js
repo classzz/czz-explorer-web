@@ -31,6 +31,11 @@ const router = new Router({
       component: resolve=>(require(["@/page/LatestTransaction.vue"],resolve)),
     },
     {
+      path: '/latestDhList',
+      name: 'latestDhList',
+      component: resolve=>(require(["@/page/latestDhList.vue"],resolve)),
+    },
+    {
       path: '/transactionHash',
       name: 'TransactionHash',
       component: resolve=>(require(["@/page/TransactionHash.vue"],resolve)),

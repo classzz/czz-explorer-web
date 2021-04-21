@@ -95,9 +95,9 @@ export default {
     },
     toConfirm(type, hash) {
       const typeData = {
-        'ETH': 'https://ropsten.etherscan.io/tx/',
-        'HECO': 'https://testnet.hecoinfo.com/tx/',
-        'BSC': 'https://testnet.bscscan.com/tx/',
+        'ETH': 'https://etherscan.io//tx/',
+        'HECO': 'https://hecoinfo.com/tx/',
+        'BSC': 'https://bscscan.com/tx/',
       }
       if(!hash) return;
       let url = typeData[type] + hash;
@@ -109,6 +109,10 @@ export default {
 </script>
 
 <style scoped>
+.sec-content {
+  padding: 10px;
+  margin-bottom: 20px;
+}
 .sec-content li {
   display: flex;
   align-items: center;

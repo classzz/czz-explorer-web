@@ -6,6 +6,7 @@
       <homeListCont
         :home-block-table="latestBlock"
         :transaction-table="transactionTable"
+        :dh-list="dhList"
       />
     </div>
     <Footer />
@@ -17,7 +18,7 @@ import Header from "./../components/header";
 import homeList from "./../components/homeList";
 import homeListCont from "./../components/homeListCont";
 import Footer from "./../components/footer";
-import { difficulty, latestHeight, blocks, transactions } from "./../api/api";
+import { difficulty, latestHeight, blocks, transactions, transactions_dhlist } from "./../api/api";
 export default {
   data() {
     return {
@@ -64,6 +65,11 @@ export default {
       }, 5000);
     },
 
+    async dhList() {
+      let res = await transactions_dhlist();
+      this.dhList = res.items;
+    },
+
     async blocks() {
       let { items: res } = await blocks();
       res.forEach((item) => (item.time = this.$format(item.createdTime)));
@@ -82,6 +88,7 @@ export default {
     this.latestHeight();
     this.blocks();
     this.transactions();
+    this.dhList();
   },
   destroyed() {
     clearTimeout(this.clearHomeTime);
