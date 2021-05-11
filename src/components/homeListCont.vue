@@ -34,7 +34,10 @@
           </div>
         </template>
         <template v-if="tableIndex == 3">
-          交易状态列表
+          <transactionChange :dhItems="dhList" />
+          <div class="get-more">
+            <el-button type="text" @click="toLatestDhList">{{$t('home.Transacitons.more')}}</el-button>
+          </div>
         </template>
       </div>
     </div>
@@ -69,9 +72,10 @@
 import titles from "./titles";
 import blockTable from "./blockTable";
 import transcationTable from "./transcationTable";
+import transactionChange from "./transactionChange";
 import czzCell from "./czzCell";
 export default {
-  props: ["homeBlockTable", "transactionTable"],
+  props: ["homeBlockTable", "transactionTable", "dhList"],
   data() {
     return {
       blockTables: this.homeBlockTable || [],
@@ -98,6 +102,9 @@ export default {
     },
     toLatestTransaction() {
       this.$router.push({ path:'/latestTransaction' });
+    }    ,
+    toLatestDhList() {
+      this.$router.push({ path:'/latestDhList' });
     }
   },
   mounted() {
@@ -107,6 +114,7 @@ export default {
     titles,
     blockTable,
     transcationTable,
+    transactionChange,
     czzCell,
   },
 };

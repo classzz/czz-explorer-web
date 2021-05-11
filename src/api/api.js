@@ -23,3 +23,6 @@ export const acsearch = (params) => ajax.get(`v1/account/search`, params)
 
 // v1/transactions/dh
 export const transactions_dh = (params) => ajax.get(`v1/transactions/dh`, params)
+
+// v1/transactions/dhlist
+export const transactions_dhlist = (params) => ajax.get(`v1/transactions/dhlist`, params)

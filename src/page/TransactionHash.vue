@@ -143,7 +143,7 @@ export default {
         txhash: this.hashId,
       };
       let result = await transactions_dh(post);
-      console.log(result.items);
+      // console.log(result.items);
       this.dhItems = result.items;
     },
   },
