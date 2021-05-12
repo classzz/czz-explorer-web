@@ -15,9 +15,6 @@
           <el-menu-item index="2"
             ><img src="./../assets/2.jpg" class="list-cont-img" />{{$t('home.latestTransaciton')}}</el-menu-item
           >
-          <el-menu-item index="3"
-            ><img src="./../assets/3.jpg" class="list-cont-img" />{{$t('home.latestTransacitonChange')}}</el-menu-item
-          >
         </el-menu>
       </div>
       <div class="table-cont">
@@ -31,12 +28,6 @@
           <transcationTable :transaction-table="transactionTable" />
           <div class="get-more">
             <el-button type="text" @click="toLatestTransaction">{{$t('home.Transacitons.more')}}</el-button>
-          </div>
-        </template>
-        <template v-if="tableIndex == 3">
-          <transactionChange :dhItems="dhList" />
-          <div class="get-more">
-            <el-button type="text" @click="toLatestDhList">{{$t('home.Transacitons.more')}}</el-button>
           </div>
         </template>
       </div>
